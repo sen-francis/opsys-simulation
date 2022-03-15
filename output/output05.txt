@@ -1,0 +1,584 @@
+Process A (arrival time 2104 ms) 92 CPU bursts (tau 1000ms)
+--> CPU burst 387 ms --> I/O burst 1190 ms
+--> CPU burst 957 ms --> I/O burst 5140 ms
+--> CPU burst 319 ms --> I/O burst 18510 ms
+--> CPU burst 893 ms --> I/O burst 7260 ms
+--> CPU burst 143 ms --> I/O burst 6260 ms
+--> CPU burst 1995 ms --> I/O burst 7800 ms
+--> CPU burst 500 ms --> I/O burst 1860 ms
+--> CPU burst 606 ms --> I/O burst 12160 ms
+--> CPU burst 103 ms --> I/O burst 1200 ms
+--> CPU burst 1405 ms --> I/O burst 11860 ms
+--> CPU burst 1956 ms --> I/O burst 1810 ms
+--> CPU burst 1078 ms --> I/O burst 7630 ms
+--> CPU burst 1482 ms --> I/O burst 4130 ms
+--> CPU burst 2028 ms --> I/O burst 2290 ms
+--> CPU burst 243 ms --> I/O burst 7000 ms
+--> CPU burst 1339 ms --> I/O burst 7860 ms
+--> CPU burst 14 ms --> I/O burst 14720 ms
+--> CPU burst 1449 ms --> I/O burst 8630 ms
+--> CPU burst 259 ms --> I/O burst 1720 ms
+--> CPU burst 1889 ms --> I/O burst 950 ms
+--> CPU burst 341 ms --> I/O burst 3230 ms
+--> CPU burst 1191 ms --> I/O burst 540 ms
+--> CPU burst 661 ms --> I/O burst 33330 ms
+--> CPU burst 247 ms --> I/O burst 10470 ms
+--> CPU burst 769 ms --> I/O burst 25630 ms
+--> CPU burst 518 ms --> I/O burst 9760 ms
+--> CPU burst 137 ms --> I/O burst 11900 ms
+--> CPU burst 1008 ms --> I/O burst 3690 ms
+--> CPU burst 1532 ms --> I/O burst 1030 ms
+--> CPU burst 1533 ms --> I/O burst 16030 ms
+--> CPU burst 332 ms --> I/O burst 9420 ms
+--> CPU burst 2348 ms --> I/O burst 12810 ms
+--> CPU burst 96 ms --> I/O burst 920 ms
+--> CPU burst 68 ms --> I/O burst 930 ms
+--> CPU burst 1667 ms --> I/O burst 8470 ms
+--> CPU burst 1291 ms --> I/O burst 17460 ms
+--> CPU burst 86 ms --> I/O burst 3030 ms
+--> CPU burst 207 ms --> I/O burst 2350 ms
+--> CPU burst 128 ms --> I/O burst 31630 ms
+--> CPU burst 965 ms --> I/O burst 3450 ms
+--> CPU burst 436 ms --> I/O burst 1600 ms
+--> CPU burst 113 ms --> I/O burst 1940 ms
+--> CPU burst 649 ms --> I/O burst 11020 ms
+--> CPU burst 382 ms --> I/O burst 1390 ms
+--> CPU burst 558 ms --> I/O burst 5930 ms
+--> CPU burst 2 ms --> I/O burst 18940 ms
+--> CPU burst 39 ms --> I/O burst 8360 ms
+--> CPU burst 415 ms --> I/O burst 36650 ms
+--> CPU burst 1048 ms --> I/O burst 1710 ms
+--> CPU burst 778 ms --> I/O burst 1410 ms
+--> CPU burst 306 ms --> I/O burst 14410 ms
+--> CPU burst 648 ms --> I/O burst 6240 ms
+--> CPU burst 637 ms --> I/O burst 9780 ms
+--> CPU burst 1810 ms --> I/O burst 19160 ms
+--> CPU burst 1556 ms --> I/O burst 890 ms
+--> CPU burst 525 ms --> I/O burst 11720 ms
+--> CPU burst 6 ms --> I/O burst 5820 ms
+--> CPU burst 118 ms --> I/O burst 6090 ms
+--> CPU burst 11 ms --> I/O burst 760 ms
+--> CPU burst 1757 ms --> I/O burst 56890 ms
+--> CPU burst 610 ms --> I/O burst 11170 ms
+--> CPU burst 1145 ms --> I/O burst 18440 ms
+--> CPU burst 1174 ms --> I/O burst 14390 ms
+--> CPU burst 212 ms --> I/O burst 5290 ms
+--> CPU burst 156 ms --> I/O burst 27380 ms
+--> CPU burst 720 ms --> I/O burst 3190 ms
+--> CPU burst 1595 ms --> I/O burst 5270 ms
+--> CPU burst 700 ms --> I/O burst 13350 ms
+--> CPU burst 336 ms --> I/O burst 4460 ms
+--> CPU burst 434 ms --> I/O burst 25490 ms
+--> CPU burst 722 ms --> I/O burst 1800 ms
+--> CPU burst 692 ms --> I/O burst 15510 ms
+--> CPU burst 625 ms --> I/O burst 5800 ms
+--> CPU burst 307 ms --> I/O burst 9330 ms
+--> CPU burst 3058 ms --> I/O burst 8720 ms
+--> CPU burst 67 ms --> I/O burst 5050 ms
+--> CPU burst 2017 ms --> I/O burst 2600 ms
+--> CPU burst 446 ms --> I/O burst 4950 ms
+--> CPU burst 702 ms --> I/O burst 8990 ms
+--> CPU burst 1989 ms --> I/O burst 13750 ms
+--> CPU burst 1656 ms --> I/O burst 2540 ms
+--> CPU burst 684 ms --> I/O burst 1300 ms
+--> CPU burst 57 ms --> I/O burst 5120 ms
+--> CPU burst 1760 ms --> I/O burst 1910 ms
+--> CPU burst 2653 ms --> I/O burst 12620 ms
+--> CPU burst 2065 ms --> I/O burst 8280 ms
+--> CPU burst 506 ms --> I/O burst 6110 ms
+--> CPU burst 624 ms --> I/O burst 21880 ms
+--> CPU burst 792 ms --> I/O burst 1840 ms
+--> CPU burst 1112 ms --> I/O burst 8680 ms
+--> CPU burst 122 ms --> I/O burst 5290 ms
+--> CPU burst 1623 ms
+Process B (arrival time 184 ms) 80 CPU bursts (tau 1000ms)
+--> CPU burst 807 ms --> I/O burst 1480 ms
+--> CPU burst 2121 ms --> I/O burst 330 ms
+--> CPU burst 891 ms --> I/O burst 3810 ms
+--> CPU burst 329 ms --> I/O burst 3270 ms
+--> CPU burst 460 ms --> I/O burst 56750 ms
+--> CPU burst 65 ms --> I/O burst 30960 ms
+--> CPU burst 256 ms --> I/O burst 2130 ms
+--> CPU burst 2276 ms --> I/O burst 10930 ms
+--> CPU burst 286 ms --> I/O burst 6890 ms
+--> CPU burst 196 ms --> I/O burst 25090 ms
+--> CPU burst 292 ms --> I/O burst 100 ms
+--> CPU burst 6257 ms --> I/O burst 2200 ms
+--> CPU burst 2325 ms --> I/O burst 300 ms
+--> CPU burst 1249 ms --> I/O burst 6800 ms
+--> CPU burst 89 ms --> I/O burst 1620 ms
+--> CPU burst 124 ms --> I/O burst 2250 ms
+--> CPU burst 262 ms --> I/O burst 24350 ms
+--> CPU burst 1583 ms --> I/O burst 19780 ms
+--> CPU burst 413 ms --> I/O burst 990 ms
+--> CPU burst 653 ms --> I/O burst 23550 ms
+--> CPU burst 186 ms --> I/O burst 13910 ms
+--> CPU burst 801 ms --> I/O burst 5480 ms
+--> CPU burst 6058 ms --> I/O burst 2850 ms
+--> CPU burst 2586 ms --> I/O burst 32360 ms
+--> CPU burst 2928 ms --> I/O burst 8990 ms
+--> CPU burst 2321 ms --> I/O burst 6950 ms
+--> CPU burst 4530 ms --> I/O burst 26910 ms
+--> CPU burst 798 ms --> I/O burst 2510 ms
+--> CPU burst 9 ms --> I/O burst 1300 ms
+--> CPU burst 947 ms --> I/O burst 7110 ms
+--> CPU burst 937 ms --> I/O burst 19340 ms
+--> CPU burst 1978 ms --> I/O burst 2380 ms
+--> CPU burst 3769 ms --> I/O burst 1660 ms
+--> CPU burst 249 ms --> I/O burst 4630 ms
+--> CPU burst 1103 ms --> I/O burst 8780 ms
+--> CPU burst 1216 ms --> I/O burst 3330 ms
+--> CPU burst 720 ms --> I/O burst 19700 ms
+--> CPU burst 621 ms --> I/O burst 7040 ms
+--> CPU burst 1013 ms --> I/O burst 4540 ms
+--> CPU burst 609 ms --> I/O burst 5570 ms
+--> CPU burst 3642 ms --> I/O burst 5240 ms
+--> CPU burst 18 ms --> I/O burst 17870 ms
+--> CPU burst 491 ms --> I/O burst 630 ms
+--> CPU burst 4053 ms --> I/O burst 34750 ms
+--> CPU burst 270 ms --> I/O burst 42230 ms
+--> CPU burst 1864 ms --> I/O burst 4810 ms
+--> CPU burst 764 ms --> I/O burst 41580 ms
+--> CPU burst 599 ms --> I/O burst 110 ms
+--> CPU burst 4328 ms --> I/O burst 12470 ms
+--> CPU burst 43 ms --> I/O burst 50320 ms
+--> CPU burst 970 ms --> I/O burst 100 ms
+--> CPU burst 769 ms --> I/O burst 6200 ms
+--> CPU burst 239 ms --> I/O burst 4410 ms
+--> CPU burst 3 ms --> I/O burst 4880 ms
+--> CPU burst 1224 ms --> I/O burst 7600 ms
+--> CPU burst 1088 ms --> I/O burst 16830 ms
+--> CPU burst 655 ms --> I/O burst 6340 ms
+--> CPU burst 1601 ms --> I/O burst 6060 ms
+--> CPU burst 136 ms --> I/O burst 11030 ms
+--> CPU burst 1233 ms --> I/O burst 6190 ms
+--> CPU burst 4095 ms --> I/O burst 2800 ms
+--> CPU burst 2870 ms --> I/O burst 1520 ms
+--> CPU burst 578 ms --> I/O burst 5680 ms
+--> CPU burst 221 ms --> I/O burst 4860 ms
+--> CPU burst 108 ms --> I/O burst 2160 ms
+--> CPU burst 377 ms --> I/O burst 7010 ms
+--> CPU burst 1186 ms --> I/O burst 10420 ms
+--> CPU burst 279 ms --> I/O burst 4610 ms
+--> CPU burst 831 ms --> I/O burst 11410 ms
+--> CPU burst 1134 ms --> I/O burst 14610 ms
+--> CPU burst 503 ms --> I/O burst 20770 ms
+--> CPU burst 646 ms --> I/O burst 8950 ms
+--> CPU burst 13 ms --> I/O burst 3300 ms
+--> CPU burst 348 ms --> I/O burst 1150 ms
+--> CPU burst 776 ms --> I/O burst 20880 ms
+--> CPU burst 2778 ms --> I/O burst 6400 ms
+--> CPU burst 24 ms --> I/O burst 1150 ms
+--> CPU burst 240 ms --> I/O burst 14790 ms
+--> CPU burst 351 ms --> I/O burst 16640 ms
+--> CPU burst 341 ms
+Process C (arrival time 64 ms) 68 CPU bursts (tau 1000ms)
+--> CPU burst 429 ms --> I/O burst 3960 ms
+--> CPU burst 1626 ms --> I/O burst 20280 ms
+--> CPU burst 1525 ms --> I/O burst 18990 ms
+--> CPU burst 2582 ms --> I/O burst 1330 ms
+--> CPU burst 875 ms --> I/O burst 17110 ms
+--> CPU burst 169 ms --> I/O burst 1800 ms
+--> CPU burst 316 ms --> I/O burst 19710 ms
+--> CPU burst 907 ms --> I/O burst 90 ms
+--> CPU burst 1642 ms --> I/O burst 7740 ms
+--> CPU burst 424 ms --> I/O burst 18000 ms
+--> CPU burst 754 ms --> I/O burst 21410 ms
+--> CPU burst 64 ms --> I/O burst 2210 ms
+--> CPU burst 794 ms --> I/O burst 19220 ms
+--> CPU burst 5 ms --> I/O burst 2940 ms
+--> CPU burst 188 ms --> I/O burst 9450 ms
+--> CPU burst 621 ms --> I/O burst 2210 ms
+--> CPU burst 25 ms --> I/O burst 18540 ms
+--> CPU burst 1293 ms --> I/O burst 23260 ms
+--> CPU burst 2181 ms --> I/O burst 4220 ms
+--> CPU burst 441 ms --> I/O burst 2140 ms
+--> CPU burst 2780 ms --> I/O burst 1870 ms
+--> CPU burst 733 ms --> I/O burst 7560 ms
+--> CPU burst 855 ms --> I/O burst 1040 ms
+--> CPU burst 305 ms --> I/O burst 22360 ms
+--> CPU burst 289 ms --> I/O burst 12080 ms
+--> CPU burst 2301 ms --> I/O burst 4300 ms
+--> CPU burst 60 ms --> I/O burst 17610 ms
+--> CPU burst 46 ms --> I/O burst 8500 ms
+--> CPU burst 136 ms --> I/O burst 21520 ms
+--> CPU burst 259 ms --> I/O burst 3860 ms
+--> CPU burst 109 ms --> I/O burst 4320 ms
+--> CPU burst 1477 ms --> I/O burst 5970 ms
+--> CPU burst 167 ms --> I/O burst 280 ms
+--> CPU burst 432 ms --> I/O burst 5350 ms
+--> CPU burst 766 ms --> I/O burst 6760 ms
+--> CPU burst 245 ms --> I/O burst 7200 ms
+--> CPU burst 3815 ms --> I/O burst 300 ms
+--> CPU burst 1895 ms --> I/O burst 7230 ms
+--> CPU burst 2942 ms --> I/O burst 8120 ms
+--> CPU burst 2518 ms --> I/O burst 2830 ms
+--> CPU burst 1002 ms --> I/O burst 10920 ms
+--> CPU burst 385 ms --> I/O burst 3990 ms
+--> CPU burst 1688 ms --> I/O burst 8640 ms
+--> CPU burst 2631 ms --> I/O burst 8200 ms
+--> CPU burst 11 ms --> I/O burst 4770 ms
+--> CPU burst 58 ms --> I/O burst 5720 ms
+--> CPU burst 1124 ms --> I/O burst 17110 ms
+--> CPU burst 1849 ms --> I/O burst 8640 ms
+--> CPU burst 335 ms --> I/O burst 8110 ms
+--> CPU burst 405 ms --> I/O burst 2680 ms
+--> CPU burst 781 ms --> I/O burst 15160 ms
+--> CPU burst 917 ms --> I/O burst 11920 ms
+--> CPU burst 590 ms --> I/O burst 6100 ms
+--> CPU burst 99 ms --> I/O burst 2710 ms
+--> CPU burst 1560 ms --> I/O burst 6090 ms
+--> CPU burst 1087 ms --> I/O burst 8580 ms
+--> CPU burst 1055 ms --> I/O burst 7780 ms
+--> CPU burst 450 ms --> I/O burst 13140 ms
+--> CPU burst 511 ms --> I/O burst 14600 ms
+--> CPU burst 1531 ms --> I/O burst 7050 ms
+--> CPU burst 1016 ms --> I/O burst 7280 ms
+--> CPU burst 16 ms --> I/O burst 6320 ms
+--> CPU burst 1320 ms --> I/O burst 370 ms
+--> CPU burst 540 ms --> I/O burst 12230 ms
+--> CPU burst 171 ms --> I/O burst 5250 ms
+--> CPU burst 1334 ms --> I/O burst 7810 ms
+--> CPU burst 1837 ms --> I/O burst 41920 ms
+--> CPU burst 52 ms
+Process D (arrival time 1874 ms) 84 CPU bursts (tau 1000ms)
+--> CPU burst 30 ms --> I/O burst 39830 ms
+--> CPU burst 182 ms --> I/O burst 15340 ms
+--> CPU burst 152 ms --> I/O burst 3660 ms
+--> CPU burst 194 ms --> I/O burst 4230 ms
+--> CPU burst 965 ms --> I/O burst 10550 ms
+--> CPU burst 826 ms --> I/O burst 6100 ms
+--> CPU burst 799 ms --> I/O burst 8520 ms
+--> CPU burst 279 ms --> I/O burst 8290 ms
+--> CPU burst 2626 ms --> I/O burst 21310 ms
+--> CPU burst 906 ms --> I/O burst 590 ms
+--> CPU burst 804 ms --> I/O burst 1930 ms
+--> CPU burst 345 ms --> I/O burst 17230 ms
+--> CPU burst 1884 ms --> I/O burst 21980 ms
+--> CPU burst 310 ms --> I/O burst 8770 ms
+--> CPU burst 1879 ms --> I/O burst 11380 ms
+--> CPU burst 2417 ms --> I/O burst 7370 ms
+--> CPU burst 1101 ms --> I/O burst 2740 ms
+--> CPU burst 730 ms --> I/O burst 7740 ms
+--> CPU burst 407 ms --> I/O burst 23180 ms
+--> CPU burst 847 ms --> I/O burst 410 ms
+--> CPU burst 284 ms --> I/O burst 1020 ms
+--> CPU burst 267 ms --> I/O burst 6090 ms
+--> CPU burst 166 ms --> I/O burst 5540 ms
+--> CPU burst 113 ms --> I/O burst 33940 ms
+--> CPU burst 1960 ms --> I/O burst 1560 ms
+--> CPU burst 902 ms --> I/O burst 20680 ms
+--> CPU burst 25 ms --> I/O burst 1100 ms
+--> CPU burst 213 ms --> I/O burst 15920 ms
+--> CPU burst 86 ms --> I/O burst 13470 ms
+--> CPU burst 332 ms --> I/O burst 38260 ms
+--> CPU burst 483 ms --> I/O burst 38000 ms
+--> CPU burst 273 ms --> I/O burst 4850 ms
+--> CPU burst 10 ms --> I/O burst 11590 ms
+--> CPU burst 372 ms --> I/O burst 4150 ms
+--> CPU burst 2283 ms --> I/O burst 4120 ms
+--> CPU burst 57 ms --> I/O burst 1050 ms
+--> CPU burst 158 ms --> I/O burst 8470 ms
+--> CPU burst 609 ms --> I/O burst 31560 ms
+--> CPU burst 1640 ms --> I/O burst 4440 ms
+--> CPU burst 2451 ms --> I/O burst 3990 ms
+--> CPU burst 1036 ms --> I/O burst 1220 ms
+--> CPU burst 760 ms --> I/O burst 2470 ms
+--> CPU burst 28 ms --> I/O burst 12000 ms
+--> CPU burst 803 ms --> I/O burst 14890 ms
+--> CPU burst 109 ms --> I/O burst 2690 ms
+--> CPU burst 2042 ms --> I/O burst 4290 ms
+--> CPU burst 367 ms --> I/O burst 17460 ms
+--> CPU burst 1970 ms --> I/O burst 24440 ms
+--> CPU burst 1893 ms --> I/O burst 12820 ms
+--> CPU burst 842 ms --> I/O burst 7060 ms
+--> CPU burst 882 ms --> I/O burst 7080 ms
+--> CPU burst 1697 ms --> I/O burst 32110 ms
+--> CPU burst 1077 ms --> I/O burst 4380 ms
+--> CPU burst 161 ms --> I/O burst 19120 ms
+--> CPU burst 782 ms --> I/O burst 31300 ms
+--> CPU burst 531 ms --> I/O burst 15090 ms
+--> CPU burst 4203 ms --> I/O burst 1790 ms
+--> CPU burst 453 ms --> I/O burst 10870 ms
+--> CPU burst 983 ms --> I/O burst 6510 ms
+--> CPU burst 44 ms --> I/O burst 4600 ms
+--> CPU burst 250 ms --> I/O burst 2280 ms
+--> CPU burst 3193 ms --> I/O burst 27080 ms
+--> CPU burst 85 ms --> I/O burst 2290 ms
+--> CPU burst 3766 ms --> I/O burst 16620 ms
+--> CPU burst 145 ms --> I/O burst 12050 ms
+--> CPU burst 204 ms --> I/O burst 19280 ms
+--> CPU burst 345 ms --> I/O burst 8140 ms
+--> CPU burst 173 ms --> I/O burst 32100 ms
+--> CPU burst 573 ms --> I/O burst 18010 ms
+--> CPU burst 2174 ms --> I/O burst 890 ms
+--> CPU burst 454 ms --> I/O burst 6740 ms
+--> CPU burst 1170 ms --> I/O burst 9350 ms
+--> CPU burst 759 ms --> I/O burst 9230 ms
+--> CPU burst 2626 ms --> I/O burst 21650 ms
+--> CPU burst 193 ms --> I/O burst 4040 ms
+--> CPU burst 2677 ms --> I/O burst 5140 ms
+--> CPU burst 1483 ms --> I/O burst 2880 ms
+--> CPU burst 1033 ms --> I/O burst 24130 ms
+--> CPU burst 86 ms --> I/O burst 1130 ms
+--> CPU burst 182 ms --> I/O burst 6450 ms
+--> CPU burst 18 ms --> I/O burst 11500 ms
+--> CPU burst 2561 ms --> I/O burst 14420 ms
+--> CPU burst 348 ms --> I/O burst 12070 ms
+--> CPU burst 358 ms
+Process E (arrival time 626 ms) 96 CPU bursts (tau 1000ms)
+--> CPU burst 3797 ms --> I/O burst 4580 ms
+--> CPU burst 440 ms --> I/O burst 3440 ms
+--> CPU burst 4641 ms --> I/O burst 540 ms
+--> CPU burst 590 ms --> I/O burst 3400 ms
+--> CPU burst 1197 ms --> I/O burst 18370 ms
+--> CPU burst 941 ms --> I/O burst 21580 ms
+--> CPU burst 211 ms --> I/O burst 6920 ms
+--> CPU burst 272 ms --> I/O burst 7300 ms
+--> CPU burst 184 ms --> I/O burst 6630 ms
+--> CPU burst 166 ms --> I/O burst 4950 ms
+--> CPU burst 157 ms --> I/O burst 16220 ms
+--> CPU burst 882 ms --> I/O burst 6380 ms
+--> CPU burst 97 ms --> I/O burst 920 ms
+--> CPU burst 429 ms --> I/O burst 10 ms
+--> CPU burst 127 ms --> I/O burst 3280 ms
+--> CPU burst 1544 ms --> I/O burst 250 ms
+--> CPU burst 50 ms --> I/O burst 5330 ms
+--> CPU burst 369 ms --> I/O burst 14400 ms
+--> CPU burst 1459 ms --> I/O burst 19830 ms
+--> CPU burst 959 ms --> I/O burst 3700 ms
+--> CPU burst 390 ms --> I/O burst 16310 ms
+--> CPU burst 495 ms --> I/O burst 9520 ms
+--> CPU burst 717 ms --> I/O burst 3470 ms
+--> CPU burst 1086 ms --> I/O burst 2430 ms
+--> CPU burst 443 ms --> I/O burst 800 ms
+--> CPU burst 240 ms --> I/O burst 12060 ms
+--> CPU burst 448 ms --> I/O burst 2200 ms
+--> CPU burst 895 ms --> I/O burst 32220 ms
+--> CPU burst 1339 ms --> I/O burst 4100 ms
+--> CPU burst 276 ms --> I/O burst 11530 ms
+--> CPU burst 550 ms --> I/O burst 5700 ms
+--> CPU burst 488 ms --> I/O burst 20280 ms
+--> CPU burst 110 ms --> I/O burst 46640 ms
+--> CPU burst 1165 ms --> I/O burst 26800 ms
+--> CPU burst 2155 ms --> I/O burst 18740 ms
+--> CPU burst 165 ms --> I/O burst 2490 ms
+--> CPU burst 1364 ms --> I/O burst 16380 ms
+--> CPU burst 1409 ms --> I/O burst 5540 ms
+--> CPU burst 115 ms --> I/O burst 12680 ms
+--> CPU burst 1577 ms --> I/O burst 22200 ms
+--> CPU burst 1425 ms --> I/O burst 5210 ms
+--> CPU burst 47 ms --> I/O burst 19260 ms
+--> CPU burst 1312 ms --> I/O burst 28470 ms
+--> CPU burst 988 ms --> I/O burst 11050 ms
+--> CPU burst 1349 ms --> I/O burst 1570 ms
+--> CPU burst 632 ms --> I/O burst 12520 ms
+--> CPU burst 218 ms --> I/O burst 39680 ms
+--> CPU burst 2142 ms --> I/O burst 5790 ms
+--> CPU burst 1355 ms --> I/O burst 14560 ms
+--> CPU burst 4830 ms --> I/O burst 3730 ms
+--> CPU burst 77 ms --> I/O burst 4530 ms
+--> CPU burst 3770 ms --> I/O burst 350 ms
+--> CPU burst 52 ms --> I/O burst 12880 ms
+--> CPU burst 235 ms --> I/O burst 4700 ms
+--> CPU burst 1512 ms --> I/O burst 6490 ms
+--> CPU burst 798 ms --> I/O burst 3270 ms
+--> CPU burst 1584 ms --> I/O burst 6400 ms
+--> CPU burst 2926 ms --> I/O burst 6750 ms
+--> CPU burst 2086 ms --> I/O burst 39640 ms
+--> CPU burst 430 ms --> I/O burst 15730 ms
+--> CPU burst 1802 ms --> I/O burst 5640 ms
+--> CPU burst 2974 ms --> I/O burst 15560 ms
+--> CPU burst 117 ms --> I/O burst 1990 ms
+--> CPU burst 425 ms --> I/O burst 3850 ms
+--> CPU burst 948 ms --> I/O burst 11610 ms
+--> CPU burst 96 ms --> I/O burst 3630 ms
+--> CPU burst 939 ms --> I/O burst 1570 ms
+--> CPU burst 1440 ms --> I/O burst 15410 ms
+--> CPU burst 1243 ms --> I/O burst 18280 ms
+--> CPU burst 872 ms --> I/O burst 580 ms
+--> CPU burst 334 ms --> I/O burst 4100 ms
+--> CPU burst 164 ms --> I/O burst 30160 ms
+--> CPU burst 1741 ms --> I/O burst 12050 ms
+--> CPU burst 272 ms --> I/O burst 3870 ms
+--> CPU burst 628 ms --> I/O burst 21780 ms
+--> CPU burst 195 ms --> I/O burst 4850 ms
+--> CPU burst 832 ms --> I/O burst 17260 ms
+--> CPU burst 86 ms --> I/O burst 10840 ms
+--> CPU burst 128 ms --> I/O burst 8950 ms
+--> CPU burst 489 ms --> I/O burst 9090 ms
+--> CPU burst 213 ms --> I/O burst 850 ms
+--> CPU burst 408 ms --> I/O burst 1060 ms
+--> CPU burst 973 ms --> I/O burst 42950 ms
+--> CPU burst 2987 ms --> I/O burst 6320 ms
+--> CPU burst 1500 ms --> I/O burst 13540 ms
+--> CPU burst 280 ms --> I/O burst 4790 ms
+--> CPU burst 132 ms --> I/O burst 13540 ms
+--> CPU burst 186 ms --> I/O burst 10060 ms
+--> CPU burst 955 ms --> I/O burst 9630 ms
+--> CPU burst 191 ms --> I/O burst 7400 ms
+--> CPU burst 1746 ms --> I/O burst 19420 ms
+--> CPU burst 630 ms --> I/O burst 3020 ms
+--> CPU burst 1961 ms --> I/O burst 860 ms
+--> CPU burst 3010 ms --> I/O burst 19660 ms
+--> CPU burst 250 ms --> I/O burst 25300 ms
+--> CPU burst 764 ms
+Process F (arrival time 869 ms) 69 CPU bursts (tau 1000ms)
+--> CPU burst 1609 ms --> I/O burst 10250 ms
+--> CPU burst 582 ms --> I/O burst 4630 ms
+--> CPU burst 2539 ms --> I/O burst 5680 ms
+--> CPU burst 1523 ms --> I/O burst 2400 ms
+--> CPU burst 159 ms --> I/O burst 11080 ms
+--> CPU burst 125 ms --> I/O burst 10900 ms
+--> CPU burst 1494 ms --> I/O burst 9540 ms
+--> CPU burst 228 ms --> I/O burst 3810 ms
+--> CPU burst 388 ms --> I/O burst 8590 ms
+--> CPU burst 1420 ms --> I/O burst 2720 ms
+--> CPU burst 2565 ms --> I/O burst 1020 ms
+--> CPU burst 626 ms --> I/O burst 7000 ms
+--> CPU burst 210 ms --> I/O burst 9870 ms
+--> CPU burst 2368 ms --> I/O burst 3480 ms
+--> CPU burst 3082 ms --> I/O burst 5380 ms
+--> CPU burst 3051 ms --> I/O burst 51610 ms
+--> CPU burst 2079 ms --> I/O burst 610 ms
+--> CPU burst 1432 ms --> I/O burst 30740 ms
+--> CPU burst 424 ms --> I/O burst 5510 ms
+--> CPU burst 213 ms --> I/O burst 20680 ms
+--> CPU burst 114 ms --> I/O burst 19520 ms
+--> CPU burst 1100 ms --> I/O burst 690 ms
+--> CPU burst 2880 ms --> I/O burst 8490 ms
+--> CPU burst 2002 ms --> I/O burst 6050 ms
+--> CPU burst 234 ms --> I/O burst 12380 ms
+--> CPU burst 367 ms --> I/O burst 5980 ms
+--> CPU burst 2105 ms --> I/O burst 34270 ms
+--> CPU burst 1577 ms --> I/O burst 42580 ms
+--> CPU burst 821 ms --> I/O burst 870 ms
+--> CPU burst 757 ms --> I/O burst 7210 ms
+--> CPU burst 90 ms --> I/O burst 2490 ms
+--> CPU burst 1913 ms --> I/O burst 26910 ms
+--> CPU burst 234 ms --> I/O burst 3830 ms
+--> CPU burst 220 ms --> I/O burst 39080 ms
+--> CPU burst 954 ms --> I/O burst 34880 ms
+--> CPU burst 1553 ms --> I/O burst 9390 ms
+--> CPU burst 145 ms --> I/O burst 1170 ms
+--> CPU burst 884 ms --> I/O burst 8120 ms
+--> CPU burst 375 ms --> I/O burst 20990 ms
+--> CPU burst 17 ms --> I/O burst 5620 ms
+--> CPU burst 686 ms --> I/O burst 20990 ms
+--> CPU burst 1761 ms --> I/O burst 20680 ms
+--> CPU burst 533 ms --> I/O burst 25970 ms
+--> CPU burst 2074 ms --> I/O burst 2800 ms
+--> CPU burst 2752 ms --> I/O burst 2330 ms
+--> CPU burst 481 ms --> I/O burst 18230 ms
+--> CPU burst 2645 ms --> I/O burst 32320 ms
+--> CPU burst 503 ms --> I/O burst 4930 ms
+--> CPU burst 1552 ms --> I/O burst 19200 ms
+--> CPU burst 3445 ms --> I/O burst 11400 ms
+--> CPU burst 923 ms --> I/O burst 10570 ms
+--> CPU burst 632 ms --> I/O burst 120 ms
+--> CPU burst 1261 ms --> I/O burst 10750 ms
+--> CPU burst 450 ms --> I/O burst 7010 ms
+--> CPU burst 653 ms --> I/O burst 4080 ms
+--> CPU burst 354 ms --> I/O burst 380 ms
+--> CPU burst 13 ms --> I/O burst 2900 ms
+--> CPU burst 269 ms --> I/O burst 45050 ms
+--> CPU burst 3592 ms --> I/O burst 9230 ms
+--> CPU burst 371 ms --> I/O burst 15400 ms
+--> CPU burst 538 ms --> I/O burst 5590 ms
+--> CPU burst 1313 ms --> I/O burst 740 ms
+--> CPU burst 747 ms --> I/O burst 260 ms
+--> CPU burst 133 ms --> I/O burst 13520 ms
+--> CPU burst 2706 ms --> I/O burst 16950 ms
+--> CPU burst 995 ms --> I/O burst 36100 ms
+--> CPU burst 1291 ms --> I/O burst 29040 ms
+--> CPU burst 2402 ms --> I/O burst 3540 ms
+--> CPU burst 1347 ms
+Process G (arrival time 1078 ms) 8 CPU bursts (tau 1000ms)
+--> CPU burst 1839 ms --> I/O burst 21670 ms
+--> CPU burst 3987 ms --> I/O burst 3900 ms
+--> CPU burst 667 ms --> I/O burst 14620 ms
+--> CPU burst 570 ms --> I/O burst 2260 ms
+--> CPU burst 591 ms --> I/O burst 17390 ms
+--> CPU burst 1117 ms --> I/O burst 4670 ms
+--> CPU burst 1218 ms --> I/O burst 1500 ms
+--> CPU burst 579 ms
+Process H (arrival time 1133 ms) 1 CPU burst (tau 1000ms)
+--> CPU burst 1019 ms
+
+time 0ms: Simulator started for FCFS [Q empty]
+time 64ms: Process C arrived; added to ready queue [Q C]
+time 66ms: Process C started using the CPU for 429ms burst [Q empty]
+time 184ms: Process B arrived; added to ready queue [Q B]
+time 495ms: Process C completed a CPU burst; 67 bursts to go [Q B]
+time 495ms: Process C switching out of CPU; will block on I/O until time 4457ms [Q B]
+time 499ms: Process B started using the CPU for 807ms burst [Q empty]
+time 626ms: Process E arrived; added to ready queue [Q E]
+time 869ms: Process F arrived; added to ready queue [Q EF]
+time 9586ms: Process H terminated [Q DABC]
+time 85975ms: Process G terminated [Q D]
+time 724639ms: Process C terminated [Q empty]
+time 989022ms: Process F terminated [Q empty]
+time 991174ms: Process A terminated [Q E]
+time 995496ms: Process B terminated [Q empty]
+time 1082954ms: Process D terminated [Q empty]
+time 1195407ms: Process E terminated [Q empty]
+time 1195409ms: Simulator ended for FCFS [Q empty]
+
+time 0ms: Simulator started for SJF [Q empty]
+time 64ms: Process C (tau 1000ms) arrived; added to ready queue [Q C]
+time 66ms: Process C (tau 1000ms) started using the CPU for 429ms burst [Q empty]
+time 184ms: Process B (tau 1000ms) arrived; added to ready queue [Q B]
+time 495ms: Process C (tau 1000ms) completed a CPU burst; 67 bursts to go [Q B]
+time 495ms: Recalculated tau from 1000ms to 715ms for process C [Q B]
+time 495ms: Process C switching out of CPU; will block on I/O until time 4457ms [Q B]
+time 499ms: Process B (tau 1000ms) started using the CPU for 807ms burst [Q empty]
+time 626ms: Process E (tau 1000ms) arrived; added to ready queue [Q E]
+time 869ms: Process F (tau 1000ms) arrived; added to ready queue [Q EF]
+time 14727ms: Process H terminated [Q BE]
+time 88471ms: Process G terminated [Q empty]
+time 712597ms: Process C terminated [Q empty]
+time 981778ms: Process A terminated [Q empty]
+time 991517ms: Process F terminated [Q empty]
+time 1001979ms: Process B terminated [Q empty]
+time 1085455ms: Process D terminated [Q empty]
+time 1182080ms: Process E terminated [Q empty]
+time 1182082ms: Simulator ended for SJF [Q empty]
+
+time 0ms: Simulator started for SRT [Q empty]
+time 64ms: Process C (tau 1000ms) arrived; added to ready queue [Q C]
+time 66ms: Process C (tau 1000ms) started using the CPU for 429ms burst [Q empty]
+time 184ms: Process B (tau 1000ms) arrived; added to ready queue [Q B]
+time 495ms: Process C (tau 1000ms) completed a CPU burst; 67 bursts to go [Q B]
+time 495ms: Recalculated tau from 1000ms to 715ms for process C [Q B]
+time 495ms: Process C switching out of CPU; will block on I/O until time 4457ms [Q B]
+time 499ms: Process B (tau 1000ms) started using the CPU for 807ms burst [Q empty]
+time 626ms: Process E (tau 1000ms) arrived; added to ready queue [Q E]
+time 869ms: Process F (tau 1000ms) arrived; added to ready queue [Q EF]
+time 14727ms: Process H terminated [Q BE]
+time 90153ms: Process G terminated [Q A]
+time 705497ms: Process C terminated [Q empty]
+time 966168ms: Process A terminated [Q B]
+time 1007206ms: Process F terminated [Q empty]
+time 1009292ms: Process B terminated [Q empty]
+time 1090406ms: Process D terminated [Q empty]
+time 1194308ms: Process E terminated [Q empty]
+time 1194310ms: Simulator ended for SRT [Q empty]
+
+time 0ms: Simulator started for RR with time slice 2048ms [Q empty]
+time 64ms: Process C arrived; added to ready queue [Q C]
+time 66ms: Process C started using the CPU for 429ms burst [Q empty]
+time 184ms: Process B arrived; added to ready queue [Q B]
+time 495ms: Process C completed a CPU burst; 67 bursts to go [Q B]
+time 495ms: Process C switching out of CPU; will block on I/O until time 4457ms [Q B]
+time 499ms: Process B started using the CPU for 807ms burst [Q empty]
+time 626ms: Process E arrived; added to ready queue [Q E]
+time 869ms: Process F arrived; added to ready queue [Q EF]
+time 7837ms: Process H terminated [Q DABEC]
+time 84926ms: Process G terminated [Q empty]
+time 722278ms: Process C terminated [Q empty]
+time 959234ms: Process A terminated [Q FB]
+time 994081ms: Process B terminated [Q empty]
+time 997374ms: Process F terminated [Q DE]
+time 1086696ms: Process D terminated [Q E]
+time 1191775ms: Process E terminated [Q empty]
+time 1191777ms: Simulator ended for RR [Q empty]

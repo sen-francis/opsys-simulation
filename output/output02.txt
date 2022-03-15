@@ -1,0 +1,45 @@
+Process A (arrival time 482 ms) 10 CPU bursts (tau 100ms)
+--> CPU burst 30 ms --> I/O burst 2820 ms
+--> CPU burst 76 ms --> I/O burst 320 ms
+--> CPU burst 190 ms --> I/O burst 40 ms
+--> CPU burst 28 ms --> I/O burst 1100 ms
+--> CPU burst 53 ms --> I/O burst 1110 ms
+--> CPU burst 111 ms --> I/O burst 710 ms
+--> CPU burst 91 ms --> I/O burst 1790 ms
+--> CPU burst 70 ms --> I/O burst 1080 ms
+--> CPU burst 63 ms --> I/O burst 520 ms
+--> CPU burst 5 ms
+
+time 0ms: Simulator started for FCFS [Q empty]
+time 482ms: Process A arrived; added to ready queue [Q A]
+time 484ms: Process A started using the CPU for 30ms burst [Q empty]
+time 514ms: Process A completed a CPU burst; 9 bursts to go [Q empty]
+time 514ms: Process A switching out of CPU; will block on I/O until time 3336ms [Q empty]
+time 10727ms: Process A terminated [Q empty]
+time 10729ms: Simulator ended for FCFS [Q empty]
+
+time 0ms: Simulator started for SJF [Q empty]
+time 482ms: Process A (tau 100ms) arrived; added to ready queue [Q A]
+time 484ms: Process A (tau 100ms) started using the CPU for 30ms burst [Q empty]
+time 514ms: Process A (tau 100ms) completed a CPU burst; 9 bursts to go [Q empty]
+time 514ms: Recalculated tau from 100ms to 65ms for process A [Q empty]
+time 514ms: Process A switching out of CPU; will block on I/O until time 3336ms [Q empty]
+time 10727ms: Process A terminated [Q empty]
+time 10729ms: Simulator ended for SJF [Q empty]
+
+time 0ms: Simulator started for SRT [Q empty]
+time 482ms: Process A (tau 100ms) arrived; added to ready queue [Q A]
+time 484ms: Process A (tau 100ms) started using the CPU for 30ms burst [Q empty]
+time 514ms: Process A (tau 100ms) completed a CPU burst; 9 bursts to go [Q empty]
+time 514ms: Recalculated tau from 100ms to 65ms for process A [Q empty]
+time 514ms: Process A switching out of CPU; will block on I/O until time 3336ms [Q empty]
+time 10727ms: Process A terminated [Q empty]
+time 10729ms: Simulator ended for SRT [Q empty]
+
+time 0ms: Simulator started for RR with time slice 256ms [Q empty]
+time 482ms: Process A arrived; added to ready queue [Q A]
+time 484ms: Process A started using the CPU for 30ms burst [Q empty]
+time 514ms: Process A completed a CPU burst; 9 bursts to go [Q empty]
+time 514ms: Process A switching out of CPU; will block on I/O until time 3336ms [Q empty]
+time 10727ms: Process A terminated [Q empty]
+time 10729ms: Simulator ended for RR [Q empty]

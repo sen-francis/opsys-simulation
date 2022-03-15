@@ -1,0 +1,148 @@
+Process A (arrival time 482 ms) 10 CPU bursts (tau 100ms)
+--> CPU burst 30 ms --> I/O burst 2820 ms
+--> CPU burst 76 ms --> I/O burst 320 ms
+--> CPU burst 190 ms --> I/O burst 40 ms
+--> CPU burst 28 ms --> I/O burst 1100 ms
+--> CPU burst 53 ms --> I/O burst 1110 ms
+--> CPU burst 111 ms --> I/O burst 710 ms
+--> CPU burst 91 ms --> I/O burst 1790 ms
+--> CPU burst 70 ms --> I/O burst 1080 ms
+--> CPU burst 63 ms --> I/O burst 520 ms
+--> CPU burst 5 ms
+Process B (arrival time 399 ms) 70 CPU bursts (tau 100ms)
+--> CPU burst 338 ms --> I/O burst 170 ms
+--> CPU burst 95 ms --> I/O burst 2560 ms
+--> CPU burst 324 ms --> I/O burst 1110 ms
+--> CPU burst 451 ms --> I/O burst 150 ms
+--> CPU burst 57 ms --> I/O burst 1070 ms
+--> CPU burst 244 ms --> I/O burst 1080 ms
+--> CPU burst 84 ms --> I/O burst 170 ms
+--> CPU burst 65 ms --> I/O burst 490 ms
+--> CPU burst 55 ms --> I/O burst 510 ms
+--> CPU burst 71 ms --> I/O burst 960 ms
+--> CPU burst 20 ms --> I/O burst 850 ms
+--> CPU burst 182 ms --> I/O burst 2180 ms
+--> CPU burst 190 ms --> I/O burst 1450 ms
+--> CPU burst 239 ms --> I/O burst 3810 ms
+--> CPU burst 274 ms --> I/O burst 370 ms
+--> CPU burst 19 ms --> I/O burst 980 ms
+--> CPU burst 54 ms --> I/O burst 250 ms
+--> CPU burst 54 ms --> I/O burst 180 ms
+--> CPU burst 131 ms --> I/O burst 1870 ms
+--> CPU burst 26 ms --> I/O burst 3840 ms
+--> CPU burst 11 ms --> I/O burst 400 ms
+--> CPU burst 150 ms --> I/O burst 80 ms
+--> CPU burst 33 ms --> I/O burst 30 ms
+--> CPU burst 17 ms --> I/O burst 430 ms
+--> CPU burst 31 ms --> I/O burst 320 ms
+--> CPU burst 102 ms --> I/O burst 10 ms
+--> CPU burst 142 ms --> I/O burst 730 ms
+--> CPU burst 205 ms --> I/O burst 1490 ms
+--> CPU burst 72 ms --> I/O burst 400 ms
+--> CPU burst 123 ms --> I/O burst 480 ms
+--> CPU burst 44 ms --> I/O burst 250 ms
+--> CPU burst 58 ms --> I/O burst 140 ms
+--> CPU burst 121 ms --> I/O burst 2080 ms
+--> CPU burst 8 ms --> I/O burst 60 ms
+--> CPU burst 137 ms --> I/O burst 820 ms
+--> CPU burst 145 ms --> I/O burst 3280 ms
+--> CPU burst 39 ms --> I/O burst 840 ms
+--> CPU burst 24 ms --> I/O burst 790 ms
+--> CPU burst 119 ms --> I/O burst 1990 ms
+--> CPU burst 8 ms --> I/O burst 1500 ms
+--> CPU burst 136 ms --> I/O burst 510 ms
+--> CPU burst 10 ms --> I/O burst 1130 ms
+--> CPU burst 85 ms --> I/O burst 500 ms
+--> CPU burst 318 ms --> I/O burst 1340 ms
+--> CPU burst 119 ms --> I/O burst 2370 ms
+--> CPU burst 43 ms --> I/O burst 620 ms
+--> CPU burst 126 ms --> I/O burst 110 ms
+--> CPU burst 42 ms --> I/O burst 110 ms
+--> CPU burst 21 ms --> I/O burst 2540 ms
+--> CPU burst 140 ms --> I/O burst 2080 ms
+--> CPU burst 15 ms --> I/O burst 1290 ms
+--> CPU burst 65 ms --> I/O burst 1090 ms
+--> CPU burst 34 ms --> I/O burst 2120 ms
+--> CPU burst 58 ms --> I/O burst 290 ms
+--> CPU burst 6 ms --> I/O burst 570 ms
+--> CPU burst 14 ms --> I/O burst 590 ms
+--> CPU burst 156 ms --> I/O burst 250 ms
+--> CPU burst 107 ms --> I/O burst 450 ms
+--> CPU burst 41 ms --> I/O burst 30 ms
+--> CPU burst 36 ms --> I/O burst 780 ms
+--> CPU burst 228 ms --> I/O burst 170 ms
+--> CPU burst 137 ms --> I/O burst 320 ms
+--> CPU burst 167 ms --> I/O burst 950 ms
+--> CPU burst 25 ms --> I/O burst 1180 ms
+--> CPU burst 109 ms --> I/O burst 1090 ms
+--> CPU burst 197 ms --> I/O burst 2270 ms
+--> CPU burst 292 ms --> I/O burst 490 ms
+--> CPU burst 12 ms --> I/O burst 610 ms
+--> CPU burst 299 ms --> I/O burst 1450 ms
+--> CPU burst 3 ms
+
+time 0ms: Simulator started for FCFS [Q empty]
+time 399ms: Process B arrived; added to ready queue [Q B]
+time 401ms: Process B started using the CPU for 338ms burst [Q empty]
+time 482ms: Process A arrived; added to ready queue [Q A]
+time 739ms: Process B completed a CPU burst; 69 bursts to go [Q A]
+time 739ms: Process B switching out of CPU; will block on I/O until time 911ms [Q A]
+time 743ms: Process A started using the CPU for 30ms burst [Q empty]
+time 773ms: Process A completed a CPU burst; 9 bursts to go [Q empty]
+time 773ms: Process A switching out of CPU; will block on I/O until time 3595ms [Q empty]
+time 911ms: Process B completed I/O; added to ready queue [Q B]
+time 913ms: Process B started using the CPU for 95ms burst [Q empty]
+time 11560ms: Process A terminated [Q empty]
+time 75750ms: Process B terminated [Q empty]
+time 75752ms: Simulator ended for FCFS [Q empty]
+
+time 0ms: Simulator started for SJF [Q empty]
+time 399ms: Process B (tau 100ms) arrived; added to ready queue [Q B]
+time 401ms: Process B (tau 100ms) started using the CPU for 338ms burst [Q empty]
+time 482ms: Process A (tau 100ms) arrived; added to ready queue [Q A]
+time 739ms: Process B (tau 100ms) completed a CPU burst; 69 bursts to go [Q A]
+time 739ms: Recalculated tau from 100ms to 219ms for process B [Q A]
+time 739ms: Process B switching out of CPU; will block on I/O until time 911ms [Q A]
+time 743ms: Process A (tau 100ms) started using the CPU for 30ms burst [Q empty]
+time 773ms: Process A (tau 100ms) completed a CPU burst; 9 bursts to go [Q empty]
+time 773ms: Recalculated tau from 100ms to 65ms for process A [Q empty]
+time 773ms: Process A switching out of CPU; will block on I/O until time 3595ms [Q empty]
+time 911ms: Process B (tau 219ms) completed I/O; added to ready queue [Q B]
+time 913ms: Process B (tau 219ms) started using the CPU for 95ms burst [Q empty]
+time 11560ms: Process A terminated [Q empty]
+time 75750ms: Process B terminated [Q empty]
+time 75752ms: Simulator ended for SJF [Q empty]
+
+time 0ms: Simulator started for SRT [Q empty]
+time 399ms: Process B (tau 100ms) arrived; added to ready queue [Q B]
+time 401ms: Process B (tau 100ms) started using the CPU for 338ms burst [Q empty]
+time 482ms: Process A (tau 100ms) arrived; added to ready queue [Q A]
+time 739ms: Process B (tau 100ms) completed a CPU burst; 69 bursts to go [Q A]
+time 739ms: Recalculated tau from 100ms to 219ms for process B [Q A]
+time 739ms: Process B switching out of CPU; will block on I/O until time 911ms [Q A]
+time 743ms: Process A (tau 100ms) started using the CPU for 30ms burst [Q empty]
+time 773ms: Process A (tau 100ms) completed a CPU burst; 9 bursts to go [Q empty]
+time 773ms: Recalculated tau from 100ms to 65ms for process A [Q empty]
+time 773ms: Process A switching out of CPU; will block on I/O until time 3595ms [Q empty]
+time 911ms: Process B (tau 219ms) completed I/O; added to ready queue [Q B]
+time 913ms: Process B (tau 219ms) started using the CPU for 95ms burst [Q empty]
+time 11196ms: Process A terminated [Q empty]
+time 75835ms: Process B terminated [Q empty]
+time 75837ms: Simulator ended for SRT [Q empty]
+
+time 0ms: Simulator started for RR with time slice 256ms [Q empty]
+time 399ms: Process B arrived; added to ready queue [Q B]
+time 401ms: Process B started using the CPU for 338ms burst [Q empty]
+time 482ms: Process A arrived; added to ready queue [Q A]
+time 657ms: Time slice expired; process B preempted with 82ms to go [Q A]
+time 661ms: Process A started using the CPU for 30ms burst [Q B]
+time 691ms: Process A completed a CPU burst; 9 bursts to go [Q B]
+time 691ms: Process A switching out of CPU; will block on I/O until time 3513ms [Q B]
+time 695ms: Process B started using the CPU for remaining 82ms of 338ms burst [Q empty]
+time 777ms: Process B completed a CPU burst; 69 bursts to go [Q empty]
+time 777ms: Process B switching out of CPU; will block on I/O until time 949ms [Q empty]
+time 949ms: Process B completed I/O; added to ready queue [Q B]
+time 951ms: Process B started using the CPU for 95ms burst [Q empty]
+time 10931ms: Process A terminated [Q empty]
+time 75849ms: Process B terminated [Q empty]
+time 75851ms: Simulator ended for RR [Q empty]
