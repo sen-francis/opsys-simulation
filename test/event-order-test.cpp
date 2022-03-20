@@ -7,9 +7,9 @@
 int main()
 {
     std::set<Event> event_queue;
-    event_queue.emplace(55, Event::Type::new_process_arrival, 'C');
-    event_queue.emplace(57, Event::Type::new_process_arrival, 'B');
-    event_queue.emplace(57, Event::Type::new_process_arrival, 'A');
+    event_queue.emplace(55, Event::Type::new_arrival, 'C');
+    event_queue.emplace(57, Event::Type::new_arrival, 'B');
+    event_queue.emplace(57, Event::Type::new_arrival, 'A');
 
     // Should print out C, then A, then B
     std::set<Event>::const_iterator next_event = event_queue.begin();

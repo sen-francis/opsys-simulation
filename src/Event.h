@@ -11,9 +11,11 @@ public:
     // Must be declared in tie-break order (see section Handling "ties" in
     // opsys-simulation.pdf)
     enum class Type {
+        switch_in, // A process starts using the CPU (done switching in)
         cpu_burst_end,
         io_burst_end,
-        new_process_arrival,
+        new_arrival,
+        switch_out, // A process is done switching out of the CPU
     };
     // time is when the event will occur in milliseconds since simulation start,
     // and 'A' <= process_id <= 'Z'
@@ -30,13 +32,8 @@ private:
 
 // Events are sorted first by time, then by type, then by process ID (see
 // section Handling "ties" in opsys-simulation.pdf)
-bool operator<(const Event &a, const Event &b)
-{
-    return a.get_time() <  b.get_time()
-       || (a.get_time() == b.get_time() && int(a.get_type()) <  int(b.get_type()))
-       || (a.get_time() == b.get_time() && int(a.get_type()) == int(b.get_type())
-           && a.get_process_id() < b.get_process_id());
-}
+bool operator<(const Event &a, const Event &b);
+bool operator>(const Event &a, const Event &b);
 
 
 #endif // EVENT_H

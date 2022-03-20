@@ -1,7 +1,9 @@
 #include <iostream>
 #include <set>
+#include <stack>
+#include <deque>
 
-#include "Event.h"
+#include "algorithms.h"
 
 
 int main(int argc, char **argv)
