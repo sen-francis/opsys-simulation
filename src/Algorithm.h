@@ -66,6 +66,12 @@ protected:
     void p_expire_no_pre(){
         pt(); cout << "Time slice expired; no preemption because ready queue is empty"; pq();
     }
+
+    void p_expire_finish(char id, int remaining, int total){
+        ptp(id); cout << "started using the CPU for remaining " << remaining
+                      <<"ms of " << total
+                      <<"ms burst"; pq();
+    }
     std::queue<char> ready_q;
 };
 

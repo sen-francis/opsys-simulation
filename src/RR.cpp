@@ -53,6 +53,9 @@ void RR::run(const EventQ &arrivals, const std::vector<Bursts> &bursts, int half
             if (p.io_bursts.empty())
                 p_term(id);
             else {
+                if(remaining[id-'A'].top()!=p.cpu_bursts.top()){
+                    p_expire_finish(id, remaining[id-'A'].top(), p.cpu_bursts.top());
+                }
                 const int io_end = t + half_tcs + p.io_bursts.top();
                 p.io_bursts.pop();
                 p_cpu_end(id, p.cpu_bursts.size(), io_end);
