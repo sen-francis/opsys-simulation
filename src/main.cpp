@@ -8,27 +8,48 @@
 #include "Fcfs.h"
 
 double next_exp(double lambda, double bound){
-    double u = drand48() / (bound + 1.0);
-    return -std::log(1- u) / lambda;
+    double r = -std::log(drand48()) / lambda;
+    while (r>bound){
+        r = -std::log(drand48()) / lambda;
+    }
+    return r;
 }
 
 void generate_arrivals_and_bursts(int n, double lambda, double bound, EventQ &arrivals, std::vector<Bursts> &bursts){
     char process_id = 'A';
     for(int i = 0; i < n; i++){
         int arrival_time = int(floor(next_exp(lambda, bound)));
-        Event e(arrival_time, Event::Type::switch_in, process_id);
+        Event e(arrival_time, Event::Type::new_arrival, process_id);
         arrivals.push(e);
         int num_bursts = int(ceil(drand48()*100));
+        cout << "Process " << process_id << " (arrival time " << arrival_time << " ms) " << num_bursts << " CPU bursts (tau " << 1/lambda <<"ms)\n";
         Bursts b;
         for(int j = 0; j < num_bursts; j++){
-            b.cpu_bursts.push(int(ceil(next_exp(lambda, bound))));
+            int cpu_burst = int(ceil(next_exp(lambda, bound)));
+            //need to check bound for ceil
+            while (cpu_burst > bound){
+               cpu_burst = int(ceil(next_exp(lambda, bound)));
+                cout << "Here: " << cpu_burst << "\n";
+            }
+            b.cpu_bursts.push(cpu_burst);
             if(j!=num_bursts-1){
-                b.io_bursts.push(int(ceil(next_exp(lambda, bound)))*10);
+                int io_burst = int(ceil(next_exp(lambda, bound)))*10;
+                //need to check bound for ceil
+                while(io_burst > bound){
+                   io_burst = int(ceil(next_exp(lambda, bound)))*10;
+                   cout << "Here: " << io_burst << "\n";
+                }
+                b.io_bursts.push(io_burst);
+                cout << "--> CPU burst " << cpu_burst << " ms --> I/O burst " << io_burst << " ms\n";
+            }
+            else{
+                cout << "--> CPU burst " << cpu_burst << " ms\n";
             }
         }
         bursts.push_back(b);
         process_id++;
     }
+    cout << "\n";
 }
 
 int main(int argc, char **argv)
@@ -52,14 +73,12 @@ int main(int argc, char **argv)
     double context_switch_time = atof(argv[5]);
     double alpha = atof(argv[6]);
     double slice_time = atof(argv[7]);
-    //seed 
+    //seed + generate times for algo
     srand48(seed);
-    //generate arrival and burst times
     EventQ arrivals;
     std::vector<Bursts> bursts;
     generate_arrivals_and_bursts(n, lambda, bound, arrivals, bursts);
-    //call algorithm function
     Fcfs().run(arrivals, bursts, context_switch_time/2);
-    //re-seed before calling each algo
+    //re-seed + generate times for each algo
     return 0;
 }
