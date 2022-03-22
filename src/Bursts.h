@@ -4,8 +4,7 @@
 #include <stack>
 
 
-class Process {
-public:
+struct Bursts {
     std::stack<int> cpu_bursts, io_bursts;
 };
 
