@@ -10,7 +10,7 @@ void RR::run(const EventQ &arrivals, const std::vector<Bursts> &bursts, int half
     // The process that is running on or switching into the CPU or '\0' if none
     char occupant = '\0';
 
-    p_start();
+    p_RR_start(time_slice);
     t = 0;
     while (!event_q.empty()) {
         const Event e = event_q.top();

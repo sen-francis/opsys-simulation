@@ -85,8 +85,8 @@ int main(int argc, char **argv)
     srand48(seed);
     EventQ arrivals;
     std::vector<Bursts> bursts(n);
-    //generate_arrivals_and_bursts(n, lambda, bound, arrivals, bursts, true);
-    //Fcfs().run(arrivals, bursts, context_switch_time/2);
+    generate_arrivals_and_bursts(n, lambda, bound, arrivals, bursts, true);
+    Fcfs().run(arrivals, bursts, context_switch_time/2);
     //re-seed + generate times for each algo
     srand48(seed);
     arrivals = EventQ();

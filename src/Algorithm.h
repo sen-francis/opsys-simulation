@@ -72,6 +72,8 @@ protected:
                       <<"ms of " << total
                       <<"ms burst"; pq();
     }
+    void p_RR_start(int time_slice) const { pt(); cout << "Simulator started for " << name << " with time slice " << time_slice<<"ms"; pq(); }
+
     std::queue<char> ready_q;
 };
 
