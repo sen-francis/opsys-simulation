@@ -26,6 +26,7 @@ void RR::run(const EventQ &arrivals, const std::vector<Bursts> &bursts, int half
             }
             else{
                 p_cpu_start(id, p.cpu_bursts.top());
+                //t+=half_tcs;
             }
             if(remaining[id-'A'].top() > time_slice){
                 event_q.emplace(t + time_slice, Event::Type::slice_expire, id);

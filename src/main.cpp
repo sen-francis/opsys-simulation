@@ -36,11 +36,12 @@ void generate_arrivals_and_bursts(int n, double lambda, double bound, EventQ &ar
             }
             cpu_bursts.push_front(cpu_burst);
             if(j!=num_bursts-1){
-                int io_burst = int(ceil(next_exp(lambda, bound)))*10;
+                int io_burst = int(ceil(next_exp(lambda, bound)));
                 //need to check bound for ceil
                 while(io_burst > bound){
-                   io_burst = int(ceil(next_exp(lambda, bound)))*10;
+                   io_burst = int(ceil(next_exp(lambda, bound)));
                 }
+                io_burst*=10;
                 io_bursts.push_front(io_burst);
                 if(print){
                     cout << "--> CPU burst " << cpu_burst << " ms --> I/O burst " << io_burst << " ms\n";
@@ -84,8 +85,8 @@ int main(int argc, char **argv)
     srand48(seed);
     EventQ arrivals;
     std::vector<Bursts> bursts(n);
-    generate_arrivals_and_bursts(n, lambda, bound, arrivals, bursts, true);
-    Fcfs().run(arrivals, bursts, context_switch_time/2);
+    //generate_arrivals_and_bursts(n, lambda, bound, arrivals, bursts, true);
+    //Fcfs().run(arrivals, bursts, context_switch_time/2);
     //re-seed + generate times for each algo
     srand48(seed);
     arrivals = EventQ();
