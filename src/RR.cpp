@@ -3,6 +3,10 @@
 void RR::run(const EventQ &arrivals, const std::vector<Bursts> &bursts, int half_tcs, int time_slice){
     event_q = arrivals;
     std::vector<Bursts> processes = bursts;
+    std::vector<std::stack<int>> remaining(bursts.size());
+    for(int i =0; i < bursts.size(); i++){
+        remaining[i] = bursts[i].cpu_bursts;
+    }
     // The process that is running on or switching into the CPU or '\0' if none
     char occupant = '\0';
 
@@ -18,25 +22,27 @@ void RR::run(const EventQ &arrivals, const std::vector<Bursts> &bursts, int half
         switch (e.get_type()) {
         case Event::Type::switch_in:
             p_cpu_start(id, p.cpu_bursts.top());
-            if(p.cpu_bursts.top() > time_slice){
+            if(remaining[id-'A'].top() > time_slice){
                 event_q.emplace(t + time_slice, Event::Type::slice_expire, id);
             }
             else{
-                event_q.emplace(t + p.cpu_bursts.top(), Event::Type::cpu_burst_end, id);
+                event_q.emplace(t + remaining[id-'A'].top(), Event::Type::cpu_burst_end, id);
                 p.cpu_bursts.pop();
+                remaining[id-'A'].pop();
             }
             break;
         case Event::Type::slice_expire:
             if(!ready_q.empty()){
                 //premption occurs, perform context switch
-                cout << "HERE : " << id << "\n";
+                //cout << "HERE : " << id << "\n";
+                remaining[id-'A'].top() -= time_slice;
                 p_expire_pre(id, p.cpu_bursts.top()-time_slice);
                 //add current event to end of queue
                 event_q.emplace(t+half_tcs, Event::Type::switch_out, id);
                 ready_q.push(id);
             }
             else{
-                cout << "HERE : " << ready_q.size() << "\n";
+                //cout << "HERE : " << ready_q.size() << "\n";
                 p_expire_no_pre();
                 event_q.emplace(t-time_slice+p.cpu_bursts.top(), Event::Type::cpu_burst_end, id);
                 p.cpu_bursts.pop();
