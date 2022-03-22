@@ -69,7 +69,8 @@ class TauAlgorithm: public Algorithm {
 public:
     // Represents a process in the ready queue for SJF or SRT with an ID and an
     // estimated burst length or estimated remaining burst length
-    struct Ready { char id; int len; };
+    struct Ready { char id; int len;
+                   Ready(char id, int len) : id(id), len(len) {} };
 protected:
     TauAlgorithm(const std::string &name) : Algorithm(name) {}
     void pq() const
@@ -84,12 +85,12 @@ protected:
     { cout << "Process " << id << " (tau " << tau[id - 'A'] << "ms)"; }
     void p_cpu_end(char id, int remain, int old_tau, int io_end) const
     {
-        ptp(id); cout << "completed a CPU burst; " << remain
-                      << (remain == 1 ? " burst" : " bursts") << " to go"; pq();
-        pt();    cout << "Recalculated tau from " << old_tau << "ms to "
-                      << tau[id - 'A'] << "ms for process " << id; pq();
-        ptp(id); cout << "switching out of CPU; will block on I/O until time "
-                      << io_end << "ms"; pq();
+        pt(); cout << "Process " << id << " (tau " << old_tau << "ms) completed a CPU burst; "
+                   << remain << (remain == 1 ? " burst" : " bursts") << " to go"; pq();
+        pt(); cout << "Recalculated tau from " << old_tau << "ms to "
+                   << tau[id - 'A'] << "ms for process " << id; pq();
+        pt(); cout << "Process " << id << " switching out of CPU; will block on I/O until time "
+                   << io_end << "ms"; pq();
     }
 
     std::priority_queue<Ready> ready_q;

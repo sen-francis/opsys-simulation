@@ -7,7 +7,7 @@
 class Fcfs: public FifoAlgorithm {
 public:
     Fcfs() : FifoAlgorithm("FCFS") {}
-    void run(const EventQ &arrivals, const std::vector<Bursts> &bursts, int half_tcs);
+    void run(const EventQ &arrivals, const std::vector<Bursts> &all_bursts, int half_tcs);
 };
 
 
