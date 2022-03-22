@@ -59,8 +59,7 @@ int main(int argc, char **argv)
     std::vector<Bursts> bursts;
     generate_arrivals_and_bursts(n, lambda, bound, arrivals, bursts);
     //call algorithm function
-    Fcfs fcfs;
-    fcfs.run(arrivals, bursts, context_switch_time/2);
+    Fcfs().run(arrivals, bursts, context_switch_time/2);
     //re-seed before calling each algo
     return 0;
 }
