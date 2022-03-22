@@ -4,29 +4,29 @@
 #include <deque>
 #include <stdlib.h>
 #include <math.h>
-#include "algorithms.h"
-#include "process.h"
+#include "Algorithm.h"
+#include "Fcfs.h"
 
 double next_exp(double lambda, double bound){
     double u = drand48() / (bound + 1.0);
     return -std::log(1- u) / lambda;
 }
 
-void generate_arrivals_and_bursts(int n, double lambda, double bound, std::priority_queue<Event, std::vector<Event>, std::greater<Event>> &arrivals, std::vector<Process> &bursts){
+void generate_arrivals_and_bursts(int n, double lambda, double bound, EventQ &arrivals, std::vector<Bursts> &bursts){
     char process_id = 'A';
     for(int i = 0; i < n; i++){
         int arrival_time = int(floor(next_exp(lambda, bound)));
         Event e(arrival_time, Event::Type::switch_in, process_id);
         arrivals.push(e);
         int num_bursts = int(ceil(drand48()*100));
-        Process p;
+        Bursts b;
         for(int j = 0; j < num_bursts; j++){
-            p.cpu_bursts.push(int(ceil(next_exp(lambda, bound))));
+            b.cpu_bursts.push(int(ceil(next_exp(lambda, bound))));
             if(j!=num_bursts-1){
-                p.io_bursts.push(int(ceil(next_exp(lambda, bound)))*10);
+                b.io_bursts.push(int(ceil(next_exp(lambda, bound)))*10);
             }
         }
-        bursts.push_back(p);
+        bursts.push_back(b);
         process_id++;
     }
 }
@@ -55,11 +55,12 @@ int main(int argc, char **argv)
     //seed 
     srand48(seed);
     //generate arrival and burst times
-    std::priority_queue<Event, std::vector<Event>, std::greater<Event>> arrivals;
-    std::vector<Process> bursts;
+    EventQ arrivals;
+    std::vector<Bursts> bursts;
     generate_arrivals_and_bursts(n, lambda, bound, arrivals, bursts);
     //call algorithm function
-    fcfs(arrivals, bursts, context_switch_time/2);
+    Fcfs fcfs;
+    fcfs.run(arrivals, bursts, context_switch_time/2);
     //re-seed before calling each algo
     return 0;
 }
