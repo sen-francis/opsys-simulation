@@ -24,29 +24,29 @@ void generate_arrivals_and_bursts(int n, double lambda, double bound, EventQ &ar
         int num_bursts = int(ceil(drand48()*100));
         cout << "Process " << process_id << " (arrival time " << arrival_time << " ms) " << num_bursts << " CPU bursts (tau " << 1/lambda <<"ms)\n";
         Bursts b;
+        std::deque<int> cpu_bursts, io_bursts;
         for(int j = 0; j < num_bursts; j++){
             int cpu_burst = int(ceil(next_exp(lambda, bound)));
             //need to check bound for ceil
             while (cpu_burst > bound){
                cpu_burst = int(ceil(next_exp(lambda, bound)));
-                cout << "Here: " << cpu_burst << "\n";
             }
-            b.cpu_bursts.push(cpu_burst);
+            cpu_bursts.push_front(cpu_burst);
             if(j!=num_bursts-1){
                 int io_burst = int(ceil(next_exp(lambda, bound)))*10;
                 //need to check bound for ceil
                 while(io_burst > bound){
                    io_burst = int(ceil(next_exp(lambda, bound)))*10;
-                   cout << "Here: " << io_burst << "\n";
                 }
-                b.io_bursts.push(io_burst);
+                io_bursts.push_front(io_burst);
                 cout << "--> CPU burst " << cpu_burst << " ms --> I/O burst " << io_burst << " ms\n";
             }
             else{
                 cout << "--> CPU burst " << cpu_burst << " ms\n";
             }
         }
-        bursts.push_back(b);
+        bursts[i].cpu_bursts = std::stack<int>(cpu_bursts);
+        bursts[i].io_bursts  = std::stack<int>(io_bursts );
         process_id++;
     }
     cout << "\n";
@@ -76,7 +76,7 @@ int main(int argc, char **argv)
     //seed + generate times for algo
     srand48(seed);
     EventQ arrivals;
-    std::vector<Bursts> bursts;
+    std::vector<Bursts> bursts(n);
     generate_arrivals_and_bursts(n, lambda, bound, arrivals, bursts);
     Fcfs().run(arrivals, bursts, context_switch_time/2);
     //re-seed + generate times for each algo
