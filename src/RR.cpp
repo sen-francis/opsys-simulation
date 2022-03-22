@@ -21,7 +21,12 @@ void RR::run(const EventQ &arrivals, const std::vector<Bursts> &bursts, int half
         Bursts &p = processes[id - 'A'];
         switch (e.get_type()) {
         case Event::Type::switch_in:
-            p_cpu_start(id, p.cpu_bursts.top());
+            if(remaining[id-'A'].top()!=p.cpu_bursts.top()){
+                p_expire_finish(id, remaining[id-'A'].top(), p.cpu_bursts.top());
+            }
+            else{
+                p_cpu_start(id, p.cpu_bursts.top());
+            }
             if(remaining[id-'A'].top() > time_slice){
                 event_q.emplace(t + time_slice, Event::Type::slice_expire, id);
             }
@@ -46,6 +51,7 @@ void RR::run(const EventQ &arrivals, const std::vector<Bursts> &bursts, int half
                 p_expire_no_pre();
                 event_q.emplace(t-time_slice+p.cpu_bursts.top(), Event::Type::cpu_burst_end, id);
                 p.cpu_bursts.pop();
+                remaining[id-'A'].pop();
             }
             break;
         case Event::Type::cpu_burst_end:
