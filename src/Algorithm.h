@@ -99,5 +99,15 @@ protected:
 // Whether a should come AFTER b in an SJF or SRT ready queue
 bool operator<(const TauAlgorithm::Ready a, const TauAlgorithm::Ready b);
 
+void printStats(ostream &ostr){
+    int sum_wait = sum_turnaround - sum_bursts - num_cs * t_half_cs * 2;
+    ostr << "Algorithm FCFS\n" << setprecision(3) << fixed
+         << "-- average CPU burst time: " << (double)sum_bursts / num_bursts << " ms\n"
+         << "-- average wait time: " << (double)sum_wait / num_bursts << " ms\n"
+         << "-- average turnaround time: " << (double)sum_turnaround / num_bursts << " ms\n"
+         << "-- total number of context switches: " << num_cs << endl
+         << "-- total number of preemptions: " << num_preepmt << endl
+         << "-- CPU utilization: " << (double)sum_bursts / t_now * 100 << "%\n";
+  }
 
 #endif // ALGORITHM_H
