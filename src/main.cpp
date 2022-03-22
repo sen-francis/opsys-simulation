@@ -6,6 +6,7 @@
 #include <math.h>
 #include "Algorithm.h"
 #include "Fcfs.h"
+#include "RR.h"
 
 double next_exp(double lambda, double bound){
     double r = -std::log(drand48()) / lambda;
@@ -64,7 +65,7 @@ int main(int argc, char **argv)
             "<context switch time> is the time in milliseconds to perform a context switch\n"
             "<alpha> \n"
             "<slice time> is the time slice value for the RR algorithm\n";
-        return 1;
+        return EXIT_FAILURE;
     }
     int n = atoi(argv[1]);
     int seed = atoi(argv[2]);
@@ -72,7 +73,7 @@ int main(int argc, char **argv)
     double bound = atof(argv[4]);
     double context_switch_time = atof(argv[5]);
     double alpha = atof(argv[6]);
-    double slice_time = atof(argv[7]);
+    double time_slice = atof(argv[7]);
     //seed + generate times for algo
     srand48(seed);
     EventQ arrivals;
@@ -80,5 +81,10 @@ int main(int argc, char **argv)
     generate_arrivals_and_bursts(n, lambda, bound, arrivals, bursts);
     Fcfs().run(arrivals, bursts, context_switch_time/2);
     //re-seed + generate times for each algo
-    return 0;
+    srand48(seed);
+    arrivals = EventQ();
+    bursts = std::vector<Bursts>(n);
+    generate_arrivals_and_bursts(n, lambda, bound, arrivals, bursts);
+    RR().run(arrivals, bursts, context_switch_time/2, time_slice);
+    return EXIT_SUCCESS;
 }

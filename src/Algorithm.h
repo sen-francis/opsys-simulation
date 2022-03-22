@@ -58,7 +58,14 @@ protected:
         ptp(id); cout << "switching out of CPU; will block on I/O until time "
                       << io_end << "ms"; pq();
     }
-
+    void p_expire_pre(char id, int time_left){
+        pt(); cout << "Time slice expired; process "<< id
+                   << " preempted with " << time_left
+                   <<"ms to go"; pq();
+    }
+    void p_expire_no_pre(){
+        pt(); cout << "Time slice expired; no preemption because ready queue is empty"; pq();
+    }
     std::queue<char> ready_q;
 };
 
