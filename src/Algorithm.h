@@ -19,6 +19,8 @@ typedef std::priority_queue<Event, std::vector<Event>, std::greater<Event>> Even
 // Abstract base class for all CPU scheduling algorithms. Mainly defines output
 // printing methods, many of which are common to all algorithms.
 class Algorithm {
+public:
+    void p_stats(std::ostream &ostr);
 protected:
     Algorithm(const std::string &name) : name(name) {}
     void pt() const { cout << "time " << t << "ms: "; } // Print time label (line prefix)
