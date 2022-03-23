@@ -39,7 +39,12 @@ protected:
     { ptp(id); cout << "started using the CPU for remaining "
                     << remain << "ms of " << burst << "ms burst"; pq(); }
     void p_term(char id) const { pt(); cout << "Process " << id << " terminated"; pq(); }
-
+    int sum_turnaround=0;
+    int sum_bursts = 0;
+    int num_cs=0;
+    int t_half_cs=atoi(argv[5])/2;
+    int num_bursts=0;
+    int num_preepmt=0;
     const std::string name; // FCFS, SJF, etc.
     EventQ event_q;
     int t = 0;
