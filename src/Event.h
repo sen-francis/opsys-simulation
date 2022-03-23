@@ -16,6 +16,7 @@ public:
         io_burst_end,
         new_arrival,
         switch_out, // A process is done switching out of the CPU
+        slice_expire,
     };
     // time is when the event will occur in milliseconds since simulation start,
     // and 'A' <= process_id <= 'Z'
