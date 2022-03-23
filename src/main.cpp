@@ -1,12 +1,19 @@
 #include <iostream>
+#include <fstream>
 #include <set>
 #include <stack>
 #include <deque>
-#include <stdlib.h>
-#include <math.h>
+#include <cstdlib>
+#include <cmath>
+
 #include "Algorithm.h"
 #include "Fcfs.h"
+#include "Sjf.h"
+#include "Srt.h"
 #include "RR.h"
+
+
+using namespace std;
 
 double next_exp(double lambda, double bound){
     double r = -std::log(drand48()) / lambda;
@@ -62,7 +69,7 @@ void generate_arrivals_and_bursts(int n, double lambda, double bound, EventQ &ar
 
 int main(int argc, char **argv)
 {
-    if (argc != 8) {
+    if (argc != 8 or atoi(argv[1])>26) {
         std::cerr <<
             "Usage: " << argv[0] << " <n processes> <seed> <lambda> <upper bound> <context switch time> <alpha> <slice time>\n"
             "<n processes> is the number of processes to simulate\n"
@@ -74,6 +81,7 @@ int main(int argc, char **argv)
             "<slice time> is the time slice value for the RR algorithm\n";
         return EXIT_FAILURE;
     }
+
     int n = atoi(argv[1]);
     int seed = atoi(argv[2]);
     double lambda = atof(argv[3]);
@@ -81,17 +89,23 @@ int main(int argc, char **argv)
     double context_switch_time = atof(argv[5]);
     double alpha = atof(argv[6]);
     double time_slice = atof(argv[7]);
+    ofstream simout("simout.txt");
+
     //seed + generate times for algo
     srand48(seed);
     EventQ arrivals;
     std::vector<Bursts> bursts(n);
     generate_arrivals_and_bursts(n, lambda, bound, arrivals, bursts, true);
-    Fcfs().run(arrivals, bursts, context_switch_time/2);
+    Fcfs fcfs;
+    fcfs.run(arrivals, bursts, context_switch_time/2);
+    fcfs.p_stats(simout);
     //re-seed + generate times for each algo
     srand48(seed);
     arrivals = EventQ();
     bursts = std::vector<Bursts>(n);
     generate_arrivals_and_bursts(n, lambda, bound, arrivals, bursts, false);
-    RR().run(arrivals, bursts, context_switch_time/2, time_slice);
+    RR rr;
+    rr.run(arrivals, bursts, context_switch_time/2, time_slice);
+    rr.p_stats(simout);
     return EXIT_SUCCESS;
 }

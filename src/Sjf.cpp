@@ -1,15 +1,22 @@
-#include "Fcfs.h"
+#include <cmath>
+
+#include "Sjf.h"
 
 
-void Fcfs::run(const EventQ &arrivals, const std::vector<Bursts> &all_bursts, int half_tcs)
+void Sjf::run(
+    const EventQ &arrivals,
+    const std::vector<Bursts> &all_bursts,
+    const std::vector<int> &tau_init,
+    int half_tcs,
+    float alpha)
 {
     event_q = arrivals;
     std::vector<Bursts> bursts = all_bursts;
+    tau = tau_init;
     // The process that is running on or switching into or out of the CPU or '\0' if none
     char occupant = '\0';
 
     p_start();
-    t = 0;
     while (!event_q.empty()) {
         const Event e = event_q.top();
         event_q.pop();
@@ -21,7 +28,6 @@ void Fcfs::run(const EventQ &arrivals, const std::vector<Bursts> &all_bursts, in
         case Event::Type::switch_in:
             p_cpu_start(id, b.cpu_bursts.top());
             event_q.emplace(t + b.cpu_bursts.top(), Event::Type::cpu_burst_end, id);
-            b.cpu_bursts.pop();
             break;
         case Event::Type::cpu_burst_end:
             event_q.emplace(t + half_tcs, Event::Type::switch_out, id);
@@ -30,7 +36,10 @@ void Fcfs::run(const EventQ &arrivals, const std::vector<Bursts> &all_bursts, in
             else {
                 const int io_end = t + half_tcs + b.io_bursts.top();
                 b.io_bursts.pop();
-                p_cpu_end(id, b.cpu_bursts.size(), io_end);
+                const int old_tau = tau[id - 'A'];
+                tau[id - 'A'] = std::ceil(alpha * b.cpu_bursts.top() + (1 - alpha) * old_tau);
+                b.cpu_bursts.pop();
+                p_cpu_end(id, b.cpu_bursts.size(), old_tau, io_end);
                 event_q.emplace(io_end, Event::Type::io_burst_end, id);
             }
             break;
@@ -38,7 +47,7 @@ void Fcfs::run(const EventQ &arrivals, const std::vector<Bursts> &all_bursts, in
         case Event::Type::new_arrival:
             if (b.cpu_bursts.empty())
                 break;
-            ready_q.push(id);
+            ready_q.emplace(id, tau[id - 'A']);
             p_arrive(id, e.get_type() == Event::Type::new_arrival);
             if (occupant == '\0') {
                 event_q.emplace(t + half_tcs, Event::Type::switch_in, id);
@@ -50,8 +59,8 @@ void Fcfs::run(const EventQ &arrivals, const std::vector<Bursts> &all_bursts, in
             if (ready_q.empty())
                 occupant = '\0';
             else {
-                event_q.emplace(t + half_tcs, Event::Type::switch_in, ready_q.front());
-                occupant = ready_q.front();
+                event_q.emplace(t + half_tcs, Event::Type::switch_in, ready_q.top().id);
+                occupant = ready_q.top().id;
                 ready_q.pop();
             }
         }
