@@ -31,8 +31,13 @@ protected:
     void p_end  () const { pt(); cout << "Simulator ended for "   << name; pq(); }
     void p_arrive(char id, bool is_new) const
     { ptp(id); cout << (is_new ? "arrived" : "completed I/O") << "; added to ready queue"; pq(); }
+    void p_arrive(char id, bool is_new, char preempt) const
+    { ptp(id); cout << (is_new ? "arrived" : "completed I/O") << "; preempting " << preempt; pq(); }
     void p_cpu_start(char id, int burst) const
     { ptp(id); cout << "started using the CPU for " << burst << "ms burst"; pq(); }
+    void p_cpu_start(char id, int burst, int remain) const
+    { ptp(id); cout << "started using the CPU for remaining "
+                    << remain << "ms of " << burst << "ms burst"; pq(); }
     void p_term(char id) const { pt(); cout << "Process " << id << " terminated"; pq(); }
 
     const std::string name; // FCFS, SJF, etc.

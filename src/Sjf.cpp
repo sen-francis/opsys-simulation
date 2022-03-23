@@ -13,7 +13,7 @@ void Sjf::run(
     event_q = arrivals;
     std::vector<Bursts> bursts = all_bursts;
     tau = tau_init;
-    // The process that is running on or switching into the CPU or '\0' if none
+    // The process that is running on or switching into or out of the CPU or '\0' if none
     char occupant = '\0';
 
     p_start();
@@ -42,15 +42,14 @@ void Sjf::run(
                 p_cpu_end(id, b.cpu_bursts.size(), old_tau, io_end);
                 event_q.emplace(io_end, Event::Type::io_burst_end, id);
             }
-            occupant = '\0';
             break;
         case Event::Type::io_burst_end:
         case Event::Type::new_arrival:
             if (b.cpu_bursts.empty())
                 break;
-            ready_q.push({id, tau[id - 'A']});
+            ready_q.emplace(id, tau[id - 'A']);
             p_arrive(id, e.get_type() == Event::Type::new_arrival);
-            if (occupant == '\0' && ready_q.size() == 1) {
+            if (occupant == '\0') {
                 event_q.emplace(t + half_tcs, Event::Type::switch_in, id);
                 ready_q.pop();
                 occupant = id;
@@ -58,10 +57,12 @@ void Sjf::run(
             break;
         case Event::Type::switch_out:
             if (ready_q.empty())
-                break;
-            event_q.emplace(t + half_tcs, Event::Type::switch_in, ready_q.top().id);
-            occupant = ready_q.top().id;
-            ready_q.pop();
+                occupant = '\0';
+            else {
+                event_q.emplace(t + half_tcs, Event::Type::switch_in, ready_q.top().id);
+                occupant = ready_q.top().id;
+                ready_q.pop();
+            }
         }
     }
     p_end();

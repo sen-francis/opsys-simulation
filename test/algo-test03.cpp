@@ -4,6 +4,7 @@
 
 #include "../src/Fcfs.h"
 #include "../src/Sjf.h"
+#include "../src/Srt.h"
 
 
 int main()
@@ -32,5 +33,7 @@ int main()
     Fcfs().run(arrivals, bursts, 2);
     std::cout << '\n';
     Sjf().run(arrivals, bursts, std::vector<int>(2, 100), 2, 0.5);
+    std::cout << '\n';
+    Srt().run(arrivals, bursts, std::vector<int>(2, 100), 2, 0.5);
     return 0;
 }
