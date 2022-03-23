@@ -46,6 +46,7 @@ void Fcfs::run(const EventQ &arrivals, const std::vector<Bursts> &all_bursts, in
                 occupant = id;
             }
             break;
+        case Event::Type::slice_expire:
         case Event::Type::switch_out:
             if (ready_q.empty())
                 occupant = '\0';

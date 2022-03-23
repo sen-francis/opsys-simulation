@@ -4,7 +4,7 @@ void RR::run(const EventQ &arrivals, const std::vector<Bursts> &bursts, int half
     event_q = arrivals;
     std::vector<Bursts> processes = bursts;
     std::vector<std::stack<int>> remaining(bursts.size());
-    for(int i =0; i < bursts.size(); i++){
+    for(int i =0; i < int(bursts.size()); i++){
         remaining[i] = bursts[i].cpu_bursts;
     }
     // The process that is running on or switching into the CPU or '\0' if none

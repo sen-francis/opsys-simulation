@@ -36,7 +36,7 @@ void Srt::run(
                 p_cpu_start(id, b.cpu_bursts.top(), b.cpu_bursts.top() - bursts_sofar[id - 'A']);
             cpu_start[id - 'A'] = t;
             if (should_preempt(ready_q.top(), occupant, false)) {
-                p_will_preempt(ready_q.top().id, occupant);
+                p_will_preempt(ready_q.top().id, occupant, t);
                 switch_status = -1;
                 event_q.emplace(t + half_tcs, Event::Type::switch_out, occupant);
             } else {
@@ -92,6 +92,7 @@ void Srt::run(
             // Must pop after p_arrive so it doesn't print [Q empty]
             if (occupant == id) ready_q.pop();
             break;
+        case Event::Type::slice_expire:
         case Event::Type::switch_out:
             if (ready_q.empty()) {
                 occupant = '\0';
@@ -109,9 +110,11 @@ void Srt::run(
     p_end();
 }
 
-void Srt::p_will_preempt(char elect, char occupant) const
+void Srt::p_will_preempt(char elect, char occupant, int time) const
 {
-    ptp(elect); std::cout << "will preempt " << occupant; pq();
+    if(time < 1000 ){
+        ptp(elect); std::cout << "will preempt " << occupant; pq();
+    }
 }
 
 bool Srt::should_preempt(const Ready candidate, char occupant, bool switching) const

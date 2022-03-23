@@ -20,29 +20,49 @@ typedef std::priority_queue<Event, std::vector<Event>, std::greater<Event>> Even
 // printing methods, many of which are common to all algorithms.
 class Algorithm {
 public:
-    void p_stats(std::ostream &ostr);
+    void p_stats(std::ostream &ostr, int t_half_cs);
 protected:
     Algorithm(const std::string &name) : name(name) {}
     void pt() const { cout << "time " << t << "ms: "; } // Print time label (line prefix)
     virtual void pq() const = 0;                        // Print ready queue (line suffix)
     virtual void pp(char id) const = 0;                 // Print process name and maybe tau
     void ptp(char id) const { pt(); pp(id); cout << ' '; } // A very common output prefix
-    void p_start() const { pt(); cout << "Simulator started for " << name; pq(); }
+    void p_start() const { 
+        if(t < 1000){
+            pt(); cout << "Simulator started for " << name; pq(); 
+        }
+    }
     void p_end  () const { pt(); cout << "Simulator ended for "   << name; pq(); }
     void p_arrive(char id, bool is_new) const
-    { ptp(id); cout << (is_new ? "arrived" : "completed I/O") << "; added to ready queue"; pq(); }
+    { 
+        if(t < 1000){
+            ptp(id); cout << (is_new ? "arrived" : "completed I/O") << "; added to ready queue"; pq(); 
+        }
+    }
     void p_arrive(char id, bool is_new, char preempt) const
-    { ptp(id); cout << (is_new ? "arrived" : "completed I/O") << "; preempting " << preempt; pq(); }
+    { 
+        if(t < 1000){
+            ptp(id); cout << (is_new ? "arrived" : "completed I/O") << "; preempting " << preempt; pq(); 
+        }
+    }
     void p_cpu_start(char id, int burst) const
-    { ptp(id); cout << "started using the CPU for " << burst << "ms burst"; pq(); }
+    { 
+        if(t < 1000){
+            ptp(id); cout << "started using the CPU for " << burst << "ms burst"; pq(); 
+        }
+    }
     void p_cpu_start(char id, int burst, int remain) const
-    { ptp(id); cout << "started using the CPU for remaining "
-                    << remain << "ms of " << burst << "ms burst"; pq(); }
+    { 
+        if(t < 1000){
+            ptp(id); cout << "started using the CPU for remaining "
+                          << remain << "ms of " << burst << "ms burst"; pq(); 
+        }
+    }
     void p_term(char id) const { pt(); cout << "Process " << id << " terminated"; pq(); }
     int sum_turnaround=0;
     int sum_bursts = 0;
     int num_cs=0;
-    int t_half_cs=atoi(argv[5])/2;
+    //int t_half_cs=atoi(argv[5])/2;
     int num_bursts=0;
     int num_preepmt=0;
     const std::string name; // FCFS, SJF, etc.
@@ -65,26 +85,38 @@ protected:
     void pp(char id) const { cout << "Process " << id; }
     void p_cpu_end(char id, int remain, int io_end) const
     {
-        ptp(id); cout << "completed a CPU burst; " << remain
-                      << (remain == 1 ? " burst" : " bursts") << " to go"; pq();
-        ptp(id); cout << "switching out of CPU; will block on I/O until time "
-                      << io_end << "ms"; pq();
+        if(t < 1000){
+            ptp(id); cout << "completed a CPU burst; " << remain
+                        << (remain == 1 ? " burst" : " bursts") << " to go"; pq();
+            ptp(id); cout << "switching out of CPU; will block on I/O until time "
+                        << io_end << "ms"; pq();
+        }
     }
     void p_expire_pre(char id, int time_left){
-        pt(); cout << "Time slice expired; process "<< id
-                   << " preempted with " << time_left
-                   <<"ms to go"; pq();
+        if(t < 1000){
+            pt(); cout << "Time slice expired; process "<< id
+                    << " preempted with " << time_left
+                    <<"ms to go"; pq();
+        }
     }
     void p_expire_no_pre(){
-        pt(); cout << "Time slice expired; no preemption because ready queue is empty"; pq();
+        if(t < 1000){
+            pt(); cout << "Time slice expired; no preemption because ready queue is empty"; pq();
+        }
     }
 
     void p_expire_finish(char id, int remaining, int total){
-        ptp(id); cout << "started using the CPU for remaining " << remaining
-                      <<"ms of " << total
-                      <<"ms burst"; pq();
+        if(t < 1000){
+            ptp(id); cout << "started using the CPU for remaining " << remaining
+                        <<"ms of " << total
+                        <<"ms burst"; pq();
+        }
     }
-    void p_RR_start(int time_slice) const { pt(); cout << "Simulator started for " << name << " with time slice " << time_slice<<"ms"; pq(); }
+    void p_RR_start(int time_slice) const { 
+        if(t < 1000){
+            pt(); cout << "Simulator started for " << name << " with time slice " << time_slice<<"ms"; pq(); 
+        }
+    }
 
     std::queue<char> ready_q;
 };
@@ -112,12 +144,14 @@ protected:
     { cout << "Process " << id << " (tau " << tau[id - 'A'] << "ms)"; }
     void p_cpu_end(char id, int remain, int old_tau, int io_end) const
     {
-        pt(); cout << "Process " << id << " (tau " << old_tau << "ms) completed a CPU burst; "
-                   << remain << (remain == 1 ? " burst" : " bursts") << " to go"; pq();
-        pt(); cout << "Recalculated tau from " << old_tau << "ms to "
-                   << tau[id - 'A'] << "ms for process " << id; pq();
-        pt(); cout << "Process " << id << " switching out of CPU; will block on I/O until time "
-                   << io_end << "ms"; pq();
+        if(t < 1000){
+            pt(); cout << "Process " << id << " (tau " << old_tau << "ms) completed a CPU burst; "
+                    << remain << (remain == 1 ? " burst" : " bursts") << " to go"; pq();
+            pt(); cout << "Recalculated tau from " << old_tau << "ms to "
+                    << tau[id - 'A'] << "ms for process " << id; pq();
+            pt(); cout << "Process " << id << " switching out of CPU; will block on I/O until time "
+                    << io_end << "ms"; pq();
+        }
     }
 
     std::priority_queue<Ready> ready_q;

@@ -14,7 +14,7 @@ public:
         int half_tcs,
         float alpha);
 protected:
-    void p_will_preempt(char elect, char occupant) const;
+    void p_will_preempt(char elect, char occupant, int time) const;
     bool should_preempt(const Ready candidate, char occupant, bool switching) const;
     int total_sofar(char id, bool switching) const;
     // bursts_sofar stores how long each process has run on its current burst

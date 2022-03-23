@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdio.h>
 #include <fstream>
 #include <set>
 #include <stack>
@@ -98,14 +99,31 @@ int main(int argc, char **argv)
     generate_arrivals_and_bursts(n, lambda, bound, arrivals, bursts, true);
     Fcfs fcfs;
     fcfs.run(arrivals, bursts, context_switch_time/2);
-    fcfs.p_stats(simout);
-    //re-seed + generate times for each algo
+    fcfs.p_stats(simout, int(context_switch_time/2));
+
+    srand48(seed);
+    arrivals = EventQ();
+    bursts = std::vector<Bursts>(n);
+    generate_arrivals_and_bursts(n, lambda, bound, arrivals, bursts, false);
+    std::vector<int> tau = {n, int(1/lambda)};
+    Sjf sjf;
+    sjf.run(arrivals, bursts, tau, context_switch_time/2, alpha);
+    sjf.p_stats(simout, int(context_switch_time/2));
+
+    srand48(seed);
+    arrivals = EventQ();
+    bursts = std::vector<Bursts>(n);
+    generate_arrivals_and_bursts(n, lambda, bound, arrivals, bursts, false);
+    Srt srt;
+    srt.run(arrivals, bursts, tau, context_switch_time/2, alpha);
+    srt.p_stats(simout, int(context_switch_time/2));
+
     srand48(seed);
     arrivals = EventQ();
     bursts = std::vector<Bursts>(n);
     generate_arrivals_and_bursts(n, lambda, bound, arrivals, bursts, false);
     RR rr;
     rr.run(arrivals, bursts, context_switch_time/2, time_slice);
-    rr.p_stats(simout);
+    rr.p_stats(simout, int(context_switch_time/2));
     return EXIT_SUCCESS;
 }
